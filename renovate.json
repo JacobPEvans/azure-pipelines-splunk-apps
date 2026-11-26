@@ -13,6 +13,13 @@
         "python"
       ],
       "allowedVersions": "<3.14"
+    },
+    {
+      "description": "ksconf 0.13.10, the newest release, reads splunklib.__version__, which splunk-sdk 3 no longer sets, so ksconf diff and filter fail on splunk-sdk 3. Hold splunk-sdk on 2.x until a ksconf release supports 3.",
+      "matchDepNames": [
+        "splunk-sdk"
+      ],
+      "allowedVersions": "<3"
     }
   ]
 }
