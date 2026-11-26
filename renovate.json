@@ -1,4 +1,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>JacobPEvans/.github"]
+  "extends": [
+    "github>JacobPEvans/.github"
+  ],
+  "packageRules": [
+    {
+      "description": "splunk-packaging-toolkit (slim) passes on Python 3.13 and fails on 3.15 with \"No module named imp\". Hold the workflow Python on 3.13 until packaging moves off slim.",
+      "matchFileNames": [
+        ".github/workflows/test.yml"
+      ],
+      "matchDepNames": [
+        "python"
+      ],
+      "allowedVersions": "<3.14"
+    }
+  ]
 }
